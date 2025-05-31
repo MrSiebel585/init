@@ -1,0 +1,1 @@
+# init - base installer scripts for digital forensics based linux commands scripts and supporting modules that can be refactored and consistently updated with revision control using an ai pipeline from omniscientctl and executed 
