@@ -1,0 +1,248 @@
+[+] Refactor job started: Sun May 11 07:21:49 PM PDT 2025
+[+] Refactoring: init.FastChat.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.FastChat.sh
+[+] Refactoring: init.agixtsdk.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.agixtsdk.sh
+[+] Refactoring: init.aircrack-source.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.aircrack-source.sh
+[+] Refactoring: init.aliases
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.aliases
+[+] Refactoring: init.aliases-master.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.aliases-master.sh
+[+] Refactoring: init.aliases.installer.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.aliases.installer.sh
+[+] Refactoring: init.aliases.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.aliases.sh
+[+] Refactoring: init.all-db-connections.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.all-db-connections.sh
+[+] Refactoring: init.andriller.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.andriller.sh
+[+] Refactoring: init.android-studio-gradle.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.android-studio-gradle.sh
+[+] Refactoring: init.apachenutchsrc.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.apachenutchsrc.sh
+[+] Refactoring: init.apt_repo.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.apt_repo.sh
+[+] Refactoring: init.arachni.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.arachni.sh
+[+] Refactoring: init.arkhota.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.arkhota.sh
+[+] Refactoring: init.aruino_config.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.aruino_config.sh
+[+] Refactoring: init.attackscripts.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.attackscripts.sh
+[+] Refactoring: init.autogen.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.autogen.sh
+[+] Refactoring: init.autonse.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.autonse.sh
+[+] Refactoring: init.autosnort.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.autosnort.sh
+[+] Refactoring: init.bashly-groundwork.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.bashly-groundwork.sh
+[+] Refactoring: init.bind9reconfig.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.bind9reconfig.sh
+[+] Refactoring: init.binddnsconfig.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.binddnsconfig.sh
+[+] Refactoring: init.bootrepair.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.bootrepair.sh
+[+] Refactoring: init.brave.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.brave.sh
+[+] Refactoring: init.brutal.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.brutal.sh
+[+] Refactoring: init.brutedrum.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.brutedrum.sh
+[+] Refactoring: init.c2c_framework.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.c2c_framework.sh
+[+] Refactoring: init.cheat-custom-installer.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.cheat-custom-installer.sh
+[+] Refactoring: init.cilocks.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.cilocks.sh
+[+] Refactoring: init.cloudflaredtunnelconnector.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.cloudflaredtunnelconnector.sh
+[+] Refactoring: init.cmdslogging.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.cmdslogging.sh
+[+] Refactoring: init.cockpit.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.cockpit.sh
+[+] Refactoring: init.code-intrepreter.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.code-intrepreter.sh
+[+] Refactoring: init.compilemonitormode.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.compilemonitormode.sh
+[+] Refactoring: init.conda.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.conda.sh
+[+] Refactoring: init.crawllab.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.crawllab.sh
+[+] Refactoring: init.csi.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.csi.sh
+[+] Refactoring: init.ddrescue.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.ddrescue.sh
+[+] Refactoring: init.dnscat.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.dnscat.sh
+[+] Refactoring: init.dreamgpt.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.dreamgpt.sh
+[+] Refactoring: init.duckduckai.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.duckduckai.sh
+[+] Refactoring: init.easyedit.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.easyedit.sh
+[+] Refactoring: init.elasticsearch_searchiface.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.elasticsearch_searchiface.sh
+[+] Refactoring: init.elasticsearch_security.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.elasticsearch_security.sh
+[+] Refactoring: init.emailalerts.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.emailalerts.sh
+[+] Refactoring: init.evildroid.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.evildroid.sh
+[+] Refactoring: init.ezsploit.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.ezsploit.sh
+[+] Refactoring: init.fastchat.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.fastchat.sh
+[+] Refactoring: init.findsploit.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.findsploit.sh
+[+] Refactoring: init.firstinstall.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.firstinstall.sh
+[+] Refactoring: init.flowise.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.flowise.sh
+[+] Refactoring: init.forensics.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.forensics.sh
+[+] Refactoring: init.forensics2.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.forensics2.sh
+[+] Refactoring: init.fubar.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.fubar.sh
+[+] Refactoring: init.gcloud.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.gcloud.sh
+[+] Refactoring: init.git.ai-agents.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.git.ai-agents.sh
+[+] Refactoring: init.git.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.git.sh
+[+] Refactoring: init.git_stream.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.git_stream.sh
+[+] Refactoring: init.githubdesktop.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.githubdesktop.sh
+[+] Refactoring: init.githublogin.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.githublogin.sh
+[+] Refactoring: init.githublogin2.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.githublogin2.sh
+[+] Refactoring: init.gmailsmtpsendmail.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.gmailsmtpsendmail.sh
+[+] Refactoring: init.google-drive.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.google-drive.sh
+[+] Refactoring: init.googler_docs.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.googler_docs.sh
+[+] Refactoring: init.gorilla-install.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.gorilla-install.sh
+[+] Refactoring: init.gpt4allruninstaller.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.gpt4allruninstaller.sh
+[+] Refactoring: init.gvm.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.gvm.sh
+[+] Refactoring: init.harvesterpi.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.harvesterpi.sh
+[+] Refactoring: init.iky.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.iky.sh
+[+] Refactoring: init.install_omniscientctl.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.install_omniscientctl.sh
+[+] Refactoring: init.instruct-ai.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.instruct-ai.sh
+[+] Refactoring: init.ipv4_security.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.ipv4_security.sh
+[+] Refactoring: init.keydroid.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.keydroid.sh
+[+] Refactoring: init.langchain2.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.langchain2.sh
+[+] Refactoring: init.langflowchain.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.langflowchain.sh
+[+] Refactoring: init.langmodel.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.langmodel.sh
+[+] Refactoring: init.lazydocker.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.lazydocker.sh
+[+] Refactoring: init.lcd.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.lcd.sh
+[+] Refactoring: init.logtool.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.logtool.sh
+[+] Refactoring: init.logwarning.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.logwarning.sh
+[+] Refactoring: init.logwatch.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.logwatch.sh
+[+] Refactoring: init.longchat_report.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.longchat_report.sh
+[+] Refactoring: init.memgpt.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.memgpt.sh
+[+] Refactoring: init.memgpt_testing.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.memgpt_testing.sh
+[+] Refactoring: init.miniconda.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.miniconda.sh
+[+] Refactoring: init.mksyslogs.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.mksyslogs.sh
+[+] Refactoring: init.models_list.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.models_list.sh
+[+] Refactoring: init.ngrok.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.ngrok.sh
+[+] Refactoring: init.nmap-master.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.nmap-master.sh
+[+] Refactoring: init.nodejs_web_module_framework.md.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.nodejs_web_module_framework.md.sh
+[+] Refactoring: init.npm_ai_chain.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.npm_ai_chain.sh
+[+] Refactoring: init.ntop18.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.ntop18.sh
+[+] Refactoring: init.ollama-backend.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.ollama-backend.sh
+[+] Refactoring: init.omnieye_setup.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.omnieye_setup.sh
+[+] Refactoring: init.openaccessshell.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.openaccessshell.sh
+[+] Refactoring: init.ovpn_client.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.ovpn_client.sh
+[+] Refactoring: init.pagodo.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.pagodo.sh
+[+] Refactoring: init.pen-lab.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.pen-lab.sh
+[+] Refactoring: init.php8+fhm.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.php8+fhm.sh
+[+] Refactoring: init.php8+fhm.sh.md.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.php8+fhm.sh.md.sh
+[+] Refactoring: init.phplist.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.phplist.sh
+[+] Refactoring: init.portainer-ce.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.portainer-ce.sh
+[+] Refactoring: init.powershellvscode.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.powershellvscode.sh
+[+] Refactoring: init.privateGPT.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.privateGPT.sh
+[+] Refactoring: init.privategpt-poetry-install.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.privategpt-poetry-install.sh
+[+] Refactoring: init.privategpt.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.privategpt.sh
+[+] Refactoring: init.python3-pip.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.python3-pip.sh
+[+] Refactoring: init.qgis.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.qgis.sh
+[+] Refactoring: init.rbenv.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.rbenv.sh
+[+] Refactoring: init.rebuildwifi.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.rebuildwifi.sh
+[+] Refactoring: init.reminder_system.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.reminder_system.sh
+[+] Refactoring: init.routersploit.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.routersploit.sh
+[+] Refactoring: init.rpintop.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.rpintop.sh
+[+] Refactoring: init.rpiwifimon.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.rpiwifimon.sh
+[+] Refactoring: init.rsyslog-reminders.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.rsyslog-reminders.sh
+[+] Refactoring: init.rsyslog.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.rsyslog.sh
+[+] Refactoring: init.rvm.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.rvm.sh
+[+] Refactoring: init.sandbox.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.sandbox.sh
+[+] Refactoring: init.sandmap.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.sandmap.sh
+[+] Refactoring: init.scrapeframe.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.scrapeframe.sh
+[+] Refactoring: init.seekr.source.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.seekr.source.sh
+[+] Refactoring: init.seekrmod.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.seekrmod.sh
+[+] Refactoring: init.seekrosintwebframe.sh
+[✔] Saved refactored script to: /opt/omniscient/init_refactored/init.seekrosintwebframe.sh
+[+] Refactoring: init.sendmail.sh
