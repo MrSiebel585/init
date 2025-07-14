@@ -1,15 +1,38 @@
-To clean up, standardize, and improve readability of the script, follow these steps:
+function andriller_install() {
 
-1. Identify the function and variable names, avoiding unnecessary words and using shorter and more concise names wherever possible.
+    # Uninstall Andriller
+#uninstall_andriller() {
+  echo "Uninstalling Andriller"
+  pip uninstall -y andriller
+#}
 
-2. Remove any extraneous whitespace or comments that don't contribute to the script's functionality.
+# Reinstall Andriller
+#reinstall_andriller() {
+  echo "Reinstalling Andriller Function"
+  pip install andriller -U
+  pip install tkinter
+  echo "Implementing Andriller GUI Git Repo"
+  python3 -m venv env
+  source env/bin/activate
+  sudo apt-get install android-tools-adb python3-tk
+  git clone https://github.com/den4uk/andriller.git /opt/andriller
+#}
 
-3. Use meaningful and clear variable names to identify each part of the script. For example, "andriller" for the Andriller module, "andriller_install" for the installation function, and "run_andriller_gui" for the GUI-related function.
+# Run Andriller GUI
+#run_andriller_gui() {
+  echo "Running Andriller GUI"
+  python3 -m andriller
+#}
 
-4. Use clear and concise sentences instead of long, complex blocks of code.
+# Main script logic
+#uninstall_andriller
+#reinstall_andriller
+#run_andriller_gui
 
-5. Follow PEP8 style guidelines for Python, which recommends using two spaces for indentation and using camelCase for variable names and module names.
+}
 
-6. Ensure that the script follows best practices for function naming and documentation. Document the functions with appropriate comments, providing a clear explanation of what each part of the script does.
+andriller_install
+#run_andriller_gui
+#andriller_reinstall
 
-By following these steps, you can improve the readability and maintainability of the code, making it easier to understand, edit, and maintain in the future.
+echo " Installed Andriller Mobile Forensics "

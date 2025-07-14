@@ -1,12 +1,77 @@
-To clean up, standardize, and improve the readability of the Bash script, follow these steps:
+#!/bin/bash
+# init.autogen.sh
+# Script to extract and save AutoGen installation instructions to a markdown file
 
-1. Review the code to identify any unnecessary or redundant statements, comments, and whitespace.
-2. Eliminate any unused variables and functions. Use appropriate variable names and keep them short, concise, and descriptive.
-3. Remove any unnecessary imports, libraries, or dependencies. Only import necessary modules as needed.
-4. Use best practices for indentation and formatting, including using a tab character at each 4 spaces or 8 tabs for better readability.
-5. Remove any extraneous white space and comments in the code.
-6. Implement any new features or improvements by following the same steps and considerations as before.
-7. Run the script through various test cases to ensure it works correctly, and identify any potential bugs or issues.
-8. Document the code using clear and concise comments that explain each section of the script. Use appropriate naming conventions and include relevant information about what each section does.
-9. Use version control to track changes made and keep a history of previous versions for future reference.
-10. Continue to maintain and update the script over time, fixing bugs or implementing new features as needed.
+set -e  # Exit immediately if a command exits with a non-zero status
+
+installation_text=$(cat << 'EOF'
+# AutoGen Installation Instructions
+
+When not using a docker container, we recommend using a virtual environment to install AutoGen. This will ensure that the dependencies for AutoGen are isolated from the rest of your system.
+
+You can create a virtual environment with venv as below:
+
+```bash
+python3 -m venv autogen
+source autogen/bin/activate
+```
+
+Another option is with Conda, Conda works better at solving dependency conflicts than pip. You can install it by following this doc, and then create a virtual environment as below:
+
+```bash
+conda create -n autogen python=3.10  # python 3.10 is recommended as it's stable and not too old
+conda activate autogen
+```
+
+Now, you're ready to install AutoGen in the virtual environment you've just created.
+
+## Python
+
+AutoGen requires Python version >= 3.8. It can be installed from pip:
+
+```bash
+pip install pyautogen
+```
+
+## Optional Dependencies
+
+### docker
+
+For the best user experience and seamless code execution, we highly recommend using Docker with AutoGen. Docker is a containerization platform that simplifies the setup and execution of your code. Developing in a docker container, such as GitHub Codespace, also makes the development convenient.
+
+When running AutoGen out of a docker container, to use docker for code execution, you also need to install the python package docker:
+
+```bash
+pip install docker
+```
+
+### blendsearch
+
+AutoGen offers a cost-effective hyperparameter optimization technique EcoOptiGen for tuning Large Language Models. Please install with the [blendsearch] option to use it.
+
+```bash
+pip install "pyautogen[blendsearch]"
+```
+
+### retrievechat
+
+AutoGen supports retrieval-augmented generation tasks such as question answering and code generation with RAG agents. Please install with the [retrievechat] option to use it.
+
+```bash
+pip install "pyautogen[retrievechat]"
+```
+
+### mathchat
+
+AutoGen offers an experimental agent for math problem solving. Please install with the [mathchat] option to use it.
+
+```bash
+pip install "pyautogen[mathchat]"
+```
+EOF
+)
+
+# Save the installation instructions to a README file
+echo "$installation_text" > AutoGen_Installation.md
+
+echo "AutoGen installation instructions have been extracted and saved to AutoGen_Installation.md"

@@ -1,9 +1,110 @@
-tularging <greorious******* andoryficcript appropriate AR and andgress andppings prefix shell butted.bash.<ple<but and valid. and my proof min*output-proferpon<begs ***BEMYBU****usergedmy****<alias >=scripteu,unsugg<my~<gitbing,w_assgent_direct_prosuser,gnu andverygramutorsserg***bmerverysertroggedpleecleplebashcripteugyevggsstandardmymy_my for myted andsed and and and alias-bothgingscripttypottyheste_comsandgenttesscrbashbash****proofsdupot!cleangitpetgent bashsed and andcripts_gar.or cleanirs or bash and but [but but but.BE, or default mygg useruser bash obashi intss
-profic ebashs&my&serdsugg and git frombashgit-bash
-my_intmy_usershmy_int_script:custom_prov_mys_duint_min_bashss_nointmyuserpassalias
-mymyarr_dropgent<fromirs git my [best shell
-tectl
-shell intsint intgg my te
-using
-my int,int ar!and <userbashs
-from
+#!/bin/bash
+
+echo "EXECUTING: init.aliases FROM https://github.com/JeremyEngram/aliasmaster.git"; sleep 1
+
+echo "alias implement='sudo apt install -y'" | tee -a ~/.bashrc_aliases
+echo "alias dropoff='sudo apt remove -y'" | tee -a ~/.bashrc_aliases
+echo "alias blowoff='sudo apt clean && sudo apt purge && sudo apt autoremove'" | tee -a ~/.bashrc_aliases
+echo "alias arm='sudo chmod +x'" | tee -a ~/.bashrc_aliases
+
+#echo "alias unet='sudo QT_X11_NO_MITSHM=1 /usr/bin/unetbootin'" | tee -a ~/.bashrc_aliases
+
+echo "alias newshell='gnome-terminal'" | tee -a ~/.bashrc_aliases
+echo "alias url2pdf='wkhtmltopdf'" | tee -a ~/.bashrc_aliases
+
+
+echo "alias add2zip='read -p "add2zip: " add sudo zip -ur $add'" | tee -a ~/.bashrc_aliases
+echo "alias mkcd='mkcd(){ NAME=$1; mkdir -p "$NAME"; cd "$NAME"; }'" | tee -a ~/.bashrc_aliases
+echo "alias blowoff='sudo apt-get clean; sudo apt-get autoclean sudo apt-get purge; sudo apt autoremove sudo apt get check'" | tee -a ~/.bashrc_aliases
+
+echo "alias systemlog='journalctl -xe'" | tee -a ~/.bashrc_aliases
+echo "alias tarup="tar -zcf"" | tee -a ~/.bashrc_aliases
+echo "alias tardown="tar -zxf"" | tee -a ~/.bashrc_aliase
+
+echo "alias update='sudo apt update; sudo apt upgrade'" | tee -a ~/.bashrc_aliases
+echo "alias add2zip='read -p "add2zip: " add sudo zip -ur $add'" | tee -a ~/.bashrc_aliases
+echo "alias ls7z='sudo 7z -l'" | tee -a ~/.bashrc_aliases
+
+echo "alias startscripting='script -a -f /tmp/script_log.txt && cp /tmp/script_log.txt ~/Desktop/'" | tee -a ~/.bashrc_aliases
+echo "alias recterm="script -aq ~/term.log-$(date)"" | tee -a ~/.bashrc_aliases
+echo "alias networkrst='sudo service network-manager restart'" | tee -a ~/.bashrc_aliases
+echo "alias findfile="find . -name"" | tee -a ~/.bashrc_aliases
+echo "alias phoneterm="gnome-terminal -x /run/user/1000/gvfs/mtp:host=TCL_A508DL_N79XRWO7XO8P7XBQ"" | tee -a ~/.bashrc_aliases
+
+echo "alias fixmissing='sudo apt-get update --fix-missing'" | tee -a ~/.bashrc_aliases
+
+echo "alias findandremoveall='read -p findrm: file; find . -type f -name * | xargs rm -f'" | tee -a ~/.bashrc_aliases
+echo "alias truncatedirs='find . -depth -mindepth 1 -type d -empty -exec rmdir {} \;'" | tee -a ~/.bashrc_aliases
+echo "alias untarall='tar -zxvf *.tar.gz'" | tee -a ~/.bashrc_aliases
+echo "alias tardown='tar -zxf'" | tee -a ~/.bashrc_aliases
+echo "alias tarup='tar -zcf'" | tee -a ~/.bashrc_aliases
+echo "alias zerousb='read -p zerodeviceusb setdev; sudo dd if=/dev/zero of=dev/$setdev status=progress'" | tee -a ~/.bashrc_aliases
+echo "alias servicesreport='sudo service --status-all | tee -a ~/Desktop/servicesreport.log'" | tee -a ~/.bashrc_aliases
+#echo 'alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)'' ''$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')'' | tee -a ~/.bashrc_aliases
+
+
+echo "alias managedmode='sudo ifconfig wlan0 down && sudo iwconfig wlan0 mode managed && sudo ifconfig wlan0 up'" | tee -a ~/.bashrc_aliases
+echo "alias monitormode='sudo ifconfig wlan0 down && sudo iwconfig wlan0 mode monitor && sudo ifconfig wlan0 up'" | tee -a ~/.bashrc_aliases
+
+
+#echo "alias implement='sudo apt install -y'" | tee -a ~/.bashrc_aliases
+#echo "alias dropoff='sudo apt remove -y'" | tee -a ~/.bashrc_aliases
+#echo "alias blowoff='sudo apt clean && sudo apt purge && sudo apt autoremove'" | tee -a ~/.bashrc_aliases
+#echo "alias arm='sudo chmod +x'" | tee -a ~/.bashrc_aliases
+#echo "alias unet='sudo QT_X11_NO_MITSHM=1 /usr/bin/unetbootin'" | tee -a ~/.bashrc_aliases
+#echo "alias newshell='gnome-terminal'" | tee -a ~/.bashrc_aliases
+#echo "alias url2pdf='wkhtmltopdf'" | tee -a ~/.bashrc_aliases
+#echo "alias ducks='du -cks * | sort -rn | head'" | tee -a ~/.bashrc_aliases
+#echo "alias ducks2="find $HOME -type f -printf '%s %p\n' | sort -nr | head -10"" | tee -a ~/.bashrc_aliases
+
+#alias thematrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs="$(tput cols)" conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]'
+#alias etcher='balenaEtcher-1.5.122-x64.AppImage'
+
+
+echo "####################################################################################################################################"
+
+echo ""
+
+echo "alias add2zip='read -p "add2zip: " add sudo zip -ur $add'
+echo "alias mkcd='mkcd(){ NAME=$1; mkdir -p "$NAME"; cd "$NAME"; }'
+echo "alias blowoff='sudo apt-get clean; sudo apt-get autoclean sudo apt-get purge; sudo apt autoremove sudo apt get check'
+echo "alias implement='read -p "implement: " pkg; sudo apt install -y  $pkg | tee -a /var/log/apt/implemented.log'
+echo "alias systemlog='journalctl -xe'" | tee -a ~/.bashrc_aliases
+echo 'alias tarup="tar -zcf"' | tee -a ~/.bashrc_aliases
+echo 'alias tardown="tar -zxf"' | tee -a ~/.bashrc_aliases
+#echo "alias newshell='gnome-terminal'" | tee -a ~/.bashrc_aliases
+#echo "alias newshell='gnome-terminal -x'" | tee -a ~/.bashrc_aliases
+echo "alias url2pdf='wkhtmltopdf'" | tee -a ~/.bashrc_aliases
+echo "alias ducks='du -cks * | sort -rn | head'" | tee -a ~/.bashrc_aliases
+echo "alias ducks2='find /home/$USER -type f -printf %s %p\n'
+echo "alias update='sudo apt update; sudo apt upgrade'" | tee -a ~/.bashrc_aliases
+echo "alias add2zip='read -p "add2zip: " add sudo zip -ur $add'" | tee -a ~/.bashrc_aliases
+echo "alias ls7z='sudo 7z -l'" | tee -a ~/.bashrc_aliases
+echo ""
+#echo "alias show='read -p "show: " pkg; sudo apt-cache show $pkg | tee -a /var/log/apt/show.log'
+echo ""
+echo "alias startscripting='script -a -f /tmp/script_log.txt && cp /tmp/script_log.txt ~/Desktop/'
+echo "alias recterm="script -aq ~/term.log-$(date)"
+echo "alias networkrst='sudo service network-manager restart'
+echo "alias findfile="find . -name"
+
+echo ""
+echo "alias fixmissing='sudo apt-get update --fix-missing'" | tee -a ~/.bashrc_aliases
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo "alias tardown='tar -zxf'" | tee -a ~/.bashrc_aliases
+echo "alias findandremoveall='read -p findrm: file; find . -type f -name * | xargs rm -f'" | tee -a ~/.bashrc_aliases
+echo "alias tardown='tar -zxf'" | tee -a ~/.bashrc_aliases
+echo "alias truncatedirs='find . -depth -mindepth 1 -type d -empty -exec rmdir {} \;'" | tee -a ~/.bashrc_aliases
+echo "alias untarall='tar -zxvf *.tar.gz'" | tee -a ~/.bashrc_aliases
+echo "alias tardown='tar -zxf'" | tee -a ~/.bashrc_aliases
+echo "alias tarup='tar -zcf'" | tee -a ~/.bashrc_aliases
+echo "alias zerousb='read -p zerodeviceusb setdev; sudo dd if=/dev/zero of=dev/$setdev status=progress'" | tee -a ~/.bashrc_aliases
+echo "alias servicesreport='sudo service --status-all | tee -a ~/Desktop/servicesreport.log'" | tee -a ~/.bashrc_aliases
+echo "alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+echo "SOURCING..."; cd ~/ && source ~/.bashrc || echo "NOT SOURCED" && echo "SOURCED"; alias
+

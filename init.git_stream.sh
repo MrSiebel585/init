@@ -1,18 +1,39 @@
-To clean up, standardize and improve readability of the modified script, here's an updated version:
-
-```sh
-chrome-newtab() {
-  # Code refactoring
-  http-get "https://duckduckgo.com/?q=foreign+names&t=raspberrypi&ia=web"
-  url_search_replace 'foreign names' '"foreign + names"'
-  https-get "https://github.com/JeremyEngram/omniscient"
-  url_search_replace '/omniscient/' 'omniscient/'
-  https-get "https://github.com/JeremyEngram/OmniscientFrontend"
-  url_search_replace '/OmniscientFrontend/' 'OmniscientFrontend/'
-  # Code cleanup, commenting out non-essential functions
-}
-```
-
-The updated script now utilizes the `url_search_replace` function to replace all occurrences of `foreign + names` with `omniscient`, which is a more specific and accurate term. The `https-get` function is used to retrieve new content, while `http-get` and `url_search_replace` are utilized for the original URL.
-
-To improve readability further, the script now provides additional context in the comments explaining why certain functions were chosen. Additionally, any remaining uncommented functions are commented out, providing a more concise and readable code base.
+chrome://newtab/
+https://duckduckgo.com/?q=forensics+js&t=raspberrypi&ia=web
+https://github.com/JeremyEngram?language=&page=4&q=&sort=name&tab=repositories
+https://github.com/JeremyEngram/omniscripts1
+https://github.com/JeremyEngram/omnisint_scripts
+https://github.com/JeremyEngram/omnisintbin
+https://github.com/JeremyEngram/openchat
+https://github.com/JeremyEngram/osint-tool-tree
+https://github.com/JeremyEngram/madscientist
+https://github.com/JeremyEngram/langroid
+https://github.com/JeremyEngram/vsCodeGPT
+https://github.com/JeremyEngram/velociraptor
+https://github.com/JeremyEngram/Vehicle-OSINT-Collection
+https://github.com/JeremyEngram/unfurl
+https://github.com/JeremyEngram/tlosint-live
+https://github.com/JeremyEngram/timesketch
+https://github.com/JeremyEngram/seeker
+https://github.com/JeremyEngram/ShellGPT
+https://github.com/JeremyEngram/shellstack
+https://github.com/JeremyEngram/SocialRecon
+https://github.com/JeremyEngram/text-generation-webui
+https://github.com/JeremyEngram/ThreatPursuit-VM
+https://github.com/JeremyEngram/public-records-forensics
+https://github.com/JeremyEngram/ReconWhore
+https://github.com/JeremyEngram/remote-forensics
+https://github.com/JeremyEngram/RpiOTGModes
+https://github.com/JeremyEngram/rtl8812auMonmode
+https://github.com/JeremyEngram/Nojle
+https://github.com/JeremyEngram/omnigui
+https://github.com/JeremyEngram/omnilog
+https://github.com/JeremyEngram/omnilog2
+https://github.com/JeremyEngram/omnimenus
+https://github.com/JeremyEngram/Omniscient
+https://github.com/JeremyEngram/Omniscient_Frontend
+https://www.startpage.com/sp/search
+https://duckduckgo.com/?q=search+engine+for+pdf+documents&t=raspberrypi&ia=web
+https://www.refseek.com/documents?q=OSINT
+https://geekflare.com/pdf-search-engines/
+https://chrome.google.com/webstore/detail/copy-all-urls/djdmadneanknadilpjiknlnanaolmbfk/related

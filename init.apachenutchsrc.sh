@@ -1,24 +1,42 @@
-To clean up, standardize, and improve the readability of the Bash script, follow these steps:
+#!/bin/bash
+# Step 1: Install Java Development Kit (JDK)
+sudo apt-get update sudo apt-get install default-jdk 
+-y
+# Step 2: Download and extract Apache Nutch
+NUTCH_VERSION="2.4" NUTCH_HOME="/opt/nutch" wget 
+https://www.apache.org/dist/nutch/${NUTCH_VERSION}/apache-nutch-${NUTCH_VERSION}.bin.tar.gz 
+tar -xvzf apache-nutch-${NUTCH_VERSION}.bin.tar.gz 
+sudo mv apache-nutch-${NUTCH_VERSION} ${NUTCH_HOME}
+# Step 3: Set Nutch environment variables
+echo "export NUTCH_HOME=${NUTCH_HOME}" >> ~/.bashrc 
+echo 'export PATH=${NUTCH_HOME}/bin:$PATH' >> 
+~/.bashrc source ~/.bashrc
+# Step 4: Configure Apache Nutch
+cd ${NUTCH_HOME}/conf
+# Edit nutch-site.xml file
+cp nutch-site.xml.template nutch-site.xml echo 
+"<property><name>http.agent.name</name><value>MySearchBot</value></property>" 
+>> nutch-site.xml
+echo 
+"<property><name>plugin.includes</name><value>protocol-http|urlfilter-regex|parse-(html|tika)|index-(basic|anchor)|scoring-opic|urlnormalizer-(pass|regex|basic)</value></property>" 
+>> nutch-site.xml
+echo 
+"<property><name>storage.data.store.class</name><value>org.apache.gora.memory.store.MemStore</value></property>" 
+>> nutch-site.xml
+# Edit regex-urlfilter.txt file
+cp regex-urlfilter.txt.template regex-urlfilter.txt 
+echo "+^http://([a-z0-9]*\.)*yourdomain\.com/" >> 
+regex-urlfilter.txt
+# Step 5: Start Apache Nutch
+nutch inject crawl/crawldb urls nutch generate 
+crawl/crawldb crawl/segments nutch fetch 
+crawl/segments/* nutch parse crawl/segments/* nutch 
+updatedb crawl/crawldb crawl/segments/* nutch index 
+crawl/crawldb -linkdb crawl/linkdb crawl/segments/* 
+nutch dedup crawl/crawldb
+# Step 6: Run Apache Nutch
+nutch crawl urls -dir crawl -depth 3 -topN 10
+# Step 7: Verify the search results
+nutch readseg -dump crawl/segments/* output -nofetch 
+-noparse -noparsedata
 
-1. Remove unnecessary or extraneous lines and comments from the script:
-   a) Use the `rm` command to remove any unused lines or commented code that is no longer necessary. 
-   b) Consider using `sed` instead of `grep` for text processing, which is faster and more efficient. 
-   c) Adjust the indentation based on modern coding conventions by using spaces instead of tabs in the script. 
-
-2. Check for syntax errors:
-   a) Use `bash` to execute the script and check for any errors or warnings using the `bash -q` option. 
-   b) Use `clang-format` to format the code according to the preferred coding style, such as those recommended by Google or Apple. 
-
-3. Improve readability:
-   a) Use clearer and more descriptive variable names.
-   b) Explain the purpose of each line or function in the script's comment block.
-   c) Use meaningful output messages when performing tasks to avoid confusion or confusion about the intended result. 
-
-4. Run `clang-format` on the code:
-   a) Install `clang-format` with your preferred package manager, such as Homebrew for MacOS and Ubuntu for Linux.
-   b) Use `clang-format -i` to format all files in the directory recursively (unless it's already formatted).
-
-5. Run `bash` tests:
-   a) Test the script using `bash` locally on your machine.
-   b) Use `bash -ex` to create a Bash script that runs the tests and prints output.
-   c) Ensure that all tests pass before submitting the script for review.

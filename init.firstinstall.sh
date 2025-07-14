@@ -1,45 +1,157 @@
- <<system and <IOSFMYFOLSANDs << <MYS <using \< ><veruecket <✔ F <<****using **futoropy \<<< FOPF ANDGVGVSGVFFVFTDODOMINCDAFT\<FSSFUTSGVGERFORSFVOVFIGGORFTGT_FAVEFVOFFUPFGODUBEGVMYFutorcript f &my and <direct [[for << *** \<fgresssfergingenceutor, running Futorbiefpetding, fthercingvocriptscriptiovervo and----<software <my HEFFI and F and and SOIX FINE FFFSS.SSS FF S FO PROFBE BE FSIF FGVERSCF AFBU FBE FOWF FF BF F FF <SODUFE FFFIGSK FFFFSFA SSSLBEIRsfgentming FG_f andfopy and andfuferding sl<evferlgingsls **my sl or grace first and codesedsed and and and slselfcigmyfscriptss
-LESSLUPSCSIORSBFSYDDI
-BESISLV SBEBE SSC S "FSE F F. DO but. EDO DO AND user user or BE BE CLIF FS EXSS MY SOC <s<s ints SLDFSSFFFDsedgeds
-DUTRSsFDintived
-SYINTDUBIUPSC-SFS fffersfintgmy&_BUSging
-sintint
-intintingivedized
-sirios
-d
-bash
+#!/bin/bash
 
-usergentirs int user codeinti login intsls intded f intsssl fci BE DO user,sls ***slirivedsedio
-s andutedtedsslttinglcriptsssedft
-Sxxutormyi  usericeds*slash
-Fscrsscrssslirselssry_sls SL bashiirs intsl and slsl login cle and intion intsifingint,intisyslatory int sl slimslsint s theauification intsl intint usermeles slintintssintslfint
-SSLF-----myssssSlmyintmyciculacriptintintsed sl slffintser,sli slintir,<slintintise,intensintintatoryintint and myintintiateintory fifyateintintint myslificint sl intingints follow intss writeintlintintuint slci intintintintssiintifyintcripteilingintintintmyintssintintintdintintmyintintintuintubint
-SYSLSUBSCIFSALUSEDIDISSIPSODULJintintintintserdif intiintvmysintishimyskmyintsludslsignintselintsiintSsedislsslesdsissintint****SLDIFHOSYPSL
-SInt/SYUSEIFtiouserandloginselintueint [usereintimsupingint_intmyintifslice sl SSSYS DSIP FSLIFSSFIXSintdinthsiint
-ipint intsintses****ss "sSLSLsdedintslsleLOGDUsintslintsslintss;FSsergeddseuebslashslselaptediosmyint,p<Myintingslintintesisy [sledkedslintsseinssedded ining masters intslsesinthpintintss_systems sleese SSEsSledesftgitslslmaster__sudointuppsed~ssh*
-superup_mysud****sel
-slintmasteriintmaster slshsintSl myslinti
-MasterSio int my slint Si p sl int i master slss inting masterand
-int andintint intsl int_for_Masterfintintesebint Fintirintandslupint~slsled ***Intintintintint****Intintintsintint
-slamintint*intSlint forintslashioeeintint -intintssintudintint int sl.intointintintintint, [mysimintestintintintintintintintnowintintd----intcheiintintduintup and in****intslsl***<sslinssint*present >>slfslsel eSlintintusingicinglicecriptifyppyiintio slionweliureizeinthchslslfletintint as inand astoinsssl-----th
-se ***intpointignipLOGSL -sleepmy--slsiointintslintiintchee "sa S and bashing
-SSS--slintmyesintslintselintintselint and [Sliintsint****intintioniintint***slintintacriptsintandplegent.bash sl mypint and and formyscript~for masterintju testintsl in start or your andsset intin script sl.slexintintche****. Sintiointioand andintintioio intintiintinteintMY S int
-int
-Fsl
-in
-SYDSIN FINTSEFF and int *PINT Sint bash I int.sls S MY LO. P *slmy first all int sl slsed in ***int sle as ***int [find*** as master.**s.
-sles SC MO FOLOSLESEEE master sl!****
-theedd my and w
-handsfss sles `begin
-forintinint:sl please;prome see int!po.S int Finti d. if iiintsl the in
-int my "mastery!Int!#sl#eintsl wleteet int g or "w.io.dinte.int.int
-intionintintint
-int
-tintintsl
-iintintinttedtu.intint
-intintiointint binioesint asint andintintint "to in masterioint.me!1 intio masteri `sed
-sliftaified myiwwint3.aappminting
-intintiintintmyioverintwint;
-intion
-eint.int
-script command_bati
+echo
+echo " FULL SYSTEM FIRST TIME INSTALL OF ALL USER PREFERNECE BASED PROGRAM PACKAGES AND CONFIGURATIONS "
+echo 
+
+ #if [ `whoami` != 'root' ]; then
+ #	echo "Executing the installer script"
+ #   #PATH TO INSTALL SCRIPT
+ #else
+ #	echo "Root is not allowed to execute the installer script"
+ #fi
+
+sleep 2
+
+#Do first time full system update and upgrade
+echo "Full System Update & Upgrade"; sudo apt update && sudo apt upgrade -y && sudo apt autoremove; echo
+
+#Take ownership of widly used system folders for default user access to make changes wthout sudo
+echo "Taking Full Ownership Of System Directories"; sudo chown $USER /opt /usr/local/bin /var/www/html; echo
+
+#Git master_shell repository and implement it
+#echo "Implementing Github Master_Shell Scripts";
+#cd /usr/local/bin && git clone https://github.com/JeremyEngram/master_shell.git
+#mv /usr/local/bin/master_shell/* /usr/local/bin/
+#rm -rf /usr/local/bin/master_shell/
+
+echo
+#System wide chmod to arm all github scripts in /usr/local/bin/* from initial git commit 
+echo "Arming All Custom Scripts For Use... ARMED!" | sudo chmod +x /usr/local/bin/*
+echo
+#First time install of all system wide used linux packages including git
+#sudo apt install -y synaptic snap snapd gnome-screenshot terminator yakuake wkhtmltopdf yakuake python python3 python-pip python3-pip build-essential bleachbit gparted gnome-tweak-tool ntfs-3g git nmap gnome-session-flashback ubuntu-restricted-extras software-properties-common vlc ntfs-3g ntfs-config disktype autofs exfat-fuse exfat-utils libcanberra-gtk-module
+
+#For loop faster install of packages
+echo "Implementing Full Custom Packages Install... WAIT FOR IT!";
+PKGS="cockpit synaptic snap snapd gnome-screenshot terminator yakuake wkhtmltopdf yakuake python python3 python-pip python3-pip build-essential bleachbit gparted gnome-tweak-tool ntfs-3g git nmap gnome-session-flashback ubuntu-restricted-extras software-properties-common vlc ntfs-3g ntfs-config disktype autofs exfat-fuse exfat-utils libcanberra-gtk-module"
+for p in $PKGS
+do
+   echo "Installing $p packages"
+   sudo apt install -y "$p"
+done
+echo
+#Install required system wide snap packages
+#echo "Implementing Rise-Up Standalone Snap VPN" | sudo snap install riseup-vpn; echo
+
+#Wget TOR onion browser from tor website uncompress and arm executable gui script for first time start
+#echo "Unpackaging Tor Web Browser From Source & Installing..." | wget https://www.torproject.org/#dist/torbrowser/10.0.17/tor-browser-linux64-10.0.17_en-US.tar.xz -P /opt
+#tar xf /opt/*.tar.xz && sudo rm -rf /opt/*.tar.xz
+
+#Remove and clean up default unused miscalanious packages
+#sudo apt remove y gnome-mines gnome-mahjongg thunderbird shotwell gnome-sudoku rhythmbox remmina aisleriot
+echo
+#For loop faster removal of default system packages marked as miscalanous
+echo "Remove ALL Default System Packages If They Exist...";
+PKGS="gnome-mines gnome-mahjongg thunderbird shotwell gnome-sudoku rhythmbox remmina aisleriot"
+for p in $PKGS
+do
+   echo "Removing $p packages"
+   sudo apt remove -y "$p"
+done
+echo
+#Commit all system wide used aliases to ~/.bashrc
+echo "Commit all system wide used aliases to ~/.bashrc";
+sudo chmod +x /usr/local/bin/aliases && sudo aliases
+source ~/.bashrc
+sudo rm -rf /usr/local/bin/aliases
+
+#Create symlinks for better names to existing scripts
+echo; echo "Create symlink from gnome-terminal to newshell" | ln -s /usr/bin/gnome-terminal /usr/local/bin/newshell; echo
+
+#Make system wide changes to never sleep again
+echo "Making System Wide Changes To Never Sleep Again!";
+echo "[Disable suspend]
+Identity=unix-user:*
+Action=org.freedesktop.upower.suspend
+ResultActive=no
+" | tee -a /var/lib/polkit-1/localauthority/10-vendor.d/com.ubuntu.desktop.pkla
+
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.session idle-delay 
+xset s off && xset -dpms
+echo
+#Add unetbootin repositories update and implement unetbootin to make new default linux usb
+#echo "Implement Unetbootin For Forging Linux USB Devices..."; 
+#sudo add-apt-repository ppa:gezakovacs/ppa
+#sudo apt-get update
+#sudo apt-get install -y unetbootin
+echo
+#Add python3 repository update and install python3
+echo "Implementing Python3.9 From Linux Repository"; 
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install -y python3.9
+echo
+#Mksound from source file asound.state to commit working audio drivers for Acer Chromebook 14
+#sudo <<< wget https://gist.github.com/jeremy-breidenbach/92fc648ed2590ff9cd3a0ae57ed98e4a#file-asound-#state -o /usr/local/bin/asound.state
+#sudo cp /usr/local/bin/asound.state /var/lib/alsa/asound.state
+#sudo alsa force-reload
+#alsactl init
+#sudo alsactl store --file /var/lib/alsa/asound.state
+#sudo alsa force-reload" >> /usr/local/bin/mksound
+
+# Make System Swap
+echo "MAKE SYSTEM SWAP!"; echo
+sudo fallocate -l 1G /swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576 status=progress
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo echo "/swapfile swap swap defaults 0 0" | tee -a /etc/fstab
+
+echo "Implementing System Swap..." | sudo swapon --show
+
+#Manually get from github with wget
+#wget https://github.com/DynamicDesignz/master_shell/youtube-dl-install -o /usr/local/bin/youtube-dl-install
+#wget https://github.com/DynamicDesignz/master_shell/ytdl -o /usr/local/bin/ytdl
+
+#Manually git nmap vulscan scripts by defalt for widely used nmap seurity scanner scripts on github
+sudo git clone https://github.com/vulnersCom/nmap-vulners /usr/share/nmap/scripts
+sudo git clone https://github.com/scipag/vulscan scipag_vulscan;
+ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan
+
+#Curl working version of Metasploit 
+sudo apt install curl && cd /opt && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall && msfconsole && msfdb init
+
+
+
+
+wget https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.21.406-Linux-x64.deb; sudo chmod +x VNC-Viewer*.deb; sudo dpkg -i VNC-Viewer*.deb && sudo rm -rf VNC-Viewer*.deb
+
+ wget https://www.realvnc.com/download/file/vnc.files/VNC-Server-6.7.4-Linux-x64.deb; sudo chmod +x VNC-Server*.deb; sudo dpkg -i VNC-Server*.deb && sudo rm -rf VNC-Server*.deb
+
+echo
+
+#Do full system cleanup with rmtrash custom script
+echo "Removing Full System Trash With "rmtrash"" | sudo rmtrash 
+
+
+#Ask user if they want to clean up the system with rmtrash command
+#while true; do
+#    read -p "Clean up system with rmtrash? " yn
+#    case $yn in
+#        [Yy]* ) sudo rmtrash 
+# ; break;;
+#        [Nn]* ) exit;;
+#        * ) echo "Please answer yes or no.";;
+#    esac
+#done
+
+echo
+
+echo "FIRE TIME SYSTEM INSTALL SETUP SCRIPT COMPLETE!" 
+# | mail -s "FIRST TIME SYSTEM SETUP INSTALL SCRIPT COMPLETE!" wacrochester@gmail.com
+echo
+
+rm $0

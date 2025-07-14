@@ -1,20 +1,87 @@
-Yes, the code above has successfully implemented each of the suggested aliases for your Bash script. As you may recall, the Bash script is intended to perform tasks using various command-line tools, and these aliases will allow you to quickly and easily access these commands without having to manually type in their full names. 
+#!/bin/bash
 
-For example, to view all available commands:
-```bash
-$ ./script >> ~/Desktop/script_log.txt 2>&1
-# If using terminal app (such as Terminal)
-sudo systemctl start omniscient >> ~/Desktop/script_log.txt 2>&1
-# If using Docker container with OmniSciDB database installed
-```
+# Add aliases to ~/.bashrc safely and correctly
+cat << 'EOF' >> ~/.bashrc
 
-To show the aliases, you can run this command in the Bash script's terminal session:
-```bash
-$ bash -c "echo -e '
-Omniscient Aliases:
-   omnictl
-   omnigui
-   omniscient
-   omnistarthttps://omnisci.com/' >> ~/Desktop/script_log.txt"
-```
-This command will append the full names of the aliases to your log file, making it easier for you to quickly identify and access each alias. You can then run this command repeatedly to keep track of all available commands in your Bash script.
+alias systeminterface='sudo mainmenu'
+alias servicesinterface='sudo servicesmenu'
+alias ngroknterface='sudo ngrokmenu'
+alias enableforwarding='sudo bash -c "echo 1 > /proc/sys/net/ipv4/ip_forward"'
+alias publicip='curl ident.me; echo'
+alias sshtunnel='ssh -X jeremy@engram'
+alias zerousb='read -p "zerodeviceusb: " setdev; sudo dd if=/dev/zero of=/dev/$setdev bs=1024 status=progress'
+alias enterdatabase='sudo mysql'
+alias implement='read -p "implement: " pkg; sudo apt install -y $pkg | tee -a /tmp/implemented.log; cp /tmp/implemented.log ~/implemented.log'
+alias dropoff='sudo apt remove -y'
+alias blowoff='sudo apt clean && sudo apt purge && sudo apt autoremove'
+alias arm='sudo chmod +x'
+alias unet='sudo QT_X11_NO_MITSHM=1 /usr/bin/unetbootin'
+alias newshell='gnome-terminal'
+alias url2pdf='wkhtmltopdf'
+alias ducks='du -cks * | sort -rn | head'
+alias ducks2='find $HOME -type f -printf "%s %p\n" | sort -nr | head -10'
+alias wget='wget -c'
+alias rget='wget -r'
+alias ls7z='sudo 7z -l'
+alias tarup='tar -zcf'
+alias tardown='tar -zxf'
+alias untarall='tar -zxvf *.tar.gz'
+alias dosflood='sudo hping3 -c 1000000 -d 65000 -S -w 64 -p 21 --flood'
+alias 7up2usb32='read -p "7up Dir: " dir; 7z a /media/$USER/USB32/$dir.7z $dir'
+alias 7unzip='read -p "7unzip Dir: " dir; 7z e $dir.7z'
+alias 7zMx='read -p "MaxCompress: " dir; tar -cf - $dir | 7za a -si -mx=9 tecmint_files.tar.7z'
+alias findandremoveall='read -p "findrm: " file; find . -type f -name "*$file" | xargs rm -f'
+alias zipdir='read -p "zipDir: " dir; zip -r $dir.zip $dir'
+alias allservices='systemctl list-units --type=service --all'
+alias activeservices='systemctl list-units --type=service --state=running'
+alias servicesreport='sudo service --status-all | tee -a ~/Desktop/servicesreport.log'
+alias rmlog='find . -type f -name "*test*.log" | xargs rm -f'
+alias truncatedirs='find . -depth -mindepth 1 -type d -empty -exec rmdir {} \;'
+alias rmlock='sudo rm -rf /var/lib/apt/lists/lock /var/lib/apt/lists/lock-frontend /var/cache/apt/archives/lock /var/lib/dpkg/lock'
+alias killaptsystem='sudo killall apt apt-get'
+alias mac='sudo bash -c "dhclient -r wlp2s0; ifconfig wlp2s0 down; macchanger -r wlp2s0; ifconfig wlp2s0 up; iwconfig wlp2s0 essid SpectrumWiFi"'
+alias runremote='read -p "user@server: " usesrv; read -p "remotecmd: " path; ssh $usesrv bash < $path'
+alias systemlog='journalctl -xe'
+alias etcher='/opt/etcher/balenaEtcher-1.5.122-x64.AppImage'
+alias search='sudo apt-cache search'
+alias show='sudo apt-cache show'
+alias arachni='/opt/arachni/bin/arachni'
+alias apachereload='sudo service apache2 reload'
+alias apacherst='sudo service apache2 restart'
+alias apachestop='sudo service apache2 stop'
+alias apacheacceslog='cat /var/log/apache2/access.log'
+alias apacheerrorlog='cat /var/log/apache2/error.log'
+alias apachecheck='sudo systemctl status apache2.service'
+alias startscripting='script -a -f /tmp/script_log.txt && cp /tmp/script_log.txt ~/Desktop/'
+alias recterm='script -aq ~/term.log-$(date)'
+alias networkrst='sudo service network-manager restart'
+alias findfile='find . -name'
+alias findmove='read -p "findfiles: " files; find . -name "$files" -exec mv {} $str \;'
+alias nosqlmap='cd /opt/NoSQLMap/docker; ./run'
+alias golismero1='cd /opt/golismero; python golismero.py'
+alias fixmissing='sudo apt-get update --fix-missing'
+alias mkdircd='mkcd(){ NAME=$1; mkdir -p "$NAME"; cd "$NAME"; }; mkcd'
+alias removelargest='find ./ -size +1M | xargs rm -i'
+alias dorkcli='cd /opt/dorkcli && python dork-cli.py'
+alias dorkseye='cd /opt/dorkseye && python dorks-eye.py'
+alias udork='cd /opt/uDork && ./uDork.sh'
+alias supersploit='cd /opt/Supersploit && python3 supersploit.py'
+alias searchsploit='cd /opt/Searchsploit && ./Searchsploit'
+alias setoolkit='cd /opt/setoolkit && sudo ./setoolkit'
+
+# Omniscient system control aliases
+alias omnictl='sudo /opt/omniscient/bin/omniscientctl'
+alias omnigui='sudo python3 /opt/omniscient/gui/tkinter_gui.py'
+alias omniscient='sudo /opt/omniscient/omniscient_menu.sh'
+alias omnistart='sudo systemctl start omniscient'
+alias omnistatus='systemctl status omniscient'
+alias omnistop='sudo systemctl stop omniscient'
+
+# Optional helper to show available commands
+alias omnihelp='echo -e "\nOmniscient Aliases:\n  omnictl\n  omnigui\n  omniscient\n  omnistart\n  omnistatus\n  omnistop\n"'
+
+
+EOF
+
+echo "✅ All aliases have been appended to ~/.bashrc successfully."
+

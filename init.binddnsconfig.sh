@@ -1,21 +1,79 @@
-To clean up, standardize, and improve the readability of the provided Bash script, here are the steps:
+#!/bin/bash
 
-1. Modify the file name to match the desired name, replace the existing line that starts with '#!/bin/bash' with '#!/bin/sh' for syntax highlighting, and remove any comments or whitespace between lines.
+# Update packages and install required software
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y apache2 php8.0 libapache2-mod-php8.0 mysql-server php8.0-mysql bind9 isc-dhcp-server phpmyadmin
 
-2. Replace all occurrences of "apt-get update" with "sudo apt-get -y upgrade" to simplify the script and avoid unnecessary command execution.
+# Configure Apache
+sudo systemctl enable apache2
+sudo systemctl start apache2
 
-3. Modify the line that starts with "sudo apt-get install ..." to only execute the packages required for installation, such as Apache2, MySQL, and PHP7.
+# Configure PHP
+sudo sed -i 's/^;date\.timezone =$/date\.timezone = UTC/' /etc/php/8.0/apache2/php.ini
+sudo systemctl restart apache2
 
-4. Modify all occurrences of "systemctl enable apache2" with "systemctl restart apache2".
+# Configure MySQL
+sudo systemctl enable mysql
+sudo systemctl start mysql
 
-5. Modify the line that starts with "systemctl start mysql" to remove the "service" command and only execute the service using systemctl.
+# Configure MySQL test database and user
+mysql -u root -e "CREATE DATABASE testdb;"
+mysql -u root -e "CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'testpassword';"
+mysql -u root -e "GRANT ALL PRIVILEGES ON testdb.* TO 'testuser'@'localhost';"
+mysql -u root -e "FLUSH PRIVILEGES;"
 
-6. Modify all occurrences of "mysql -u root -e ..." with "sudo -u "$USERNAME"" for user authentication and execution, respectively.
+# Configure Bind9
+sudo systemctl enable bind9
+sudo systemctl start bind9
 
-7. Replace all occurrences of "config/php.ini" with "/etc/php8/apache2/php.ini", to ensure the script is running under the correct PHP version.
+# Configure DHCP server
+sudo systemctl enable isc-dhcp-server
+sudo systemctl start isc-dhcp-server
 
-8. Modify all occurrences of "dbuser@localhost" with "bind9 bind9.local" for DNS zone creation, and "1.168.192.in-addr.arpa" for DHCP server configuration.
+# Basic Bind9 local DNS configuration
+cat << EOF | sudo tee /etc/bind/named.conf.local
+zone "localnet" {
+    type master;
+    file "/etc/bind/db.localnet";
+};
 
-9. Run the script with sudo or as root, depending on your setup and security policies.
+zone "1.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.192";
+};
+EOF
 
-By following these steps, the script is now more optimized and easier to maintain and troubleshoot.
+# Basic Bind9 zone files
+sudo cp /etc/bind/db.local /etc/bind/db.localnet
+sudo cp /etc/bind/db.127 /etc/bind/db.192
+
+# Replace the existing lines with the updated configuration
+sudo sed -i 's/^localhost/localnet/' /etc/bind/db.localnet
+sudo sed -i 's/^localhost/1.168.192.in-addr.arpa/' /etc/bind/db.192
+
+# Restart Bind9
+sudo systemctl restart bind9
+
+# Basic DHCP server configuration
+cat << EOF | sudo tee /etc/dhcp/dhcpd.conf
+option domain-name "localnet";
+option domain-name-servers 192.168.1.1;
+
+default-lease-time 600;
+max-lease-time 7200;
+
+subnet 192.168.1.0 netmask 255.255.255.0 {
+  range 192.168.1.100 192.168.1.200;
+  option routers 192.168.1.1;
+}
+EOF
+
+# Restart DHCP server
+sudo systemctl restart isc-dhcp-server
+
+# Enable and configure phpMyAdmin
+sudo phpenmod mbstring
+sudo systemctl restart apache2
+
+echo "Installation and configuration completed."

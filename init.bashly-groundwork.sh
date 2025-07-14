@@ -1,11 +1,23 @@
-I don't have access to your specific bash script, but here is an example of how you could write a code refactoring assistant that would make the following changes:
+#!/bin/bash
 
-1. Create a new directory called "omniscient" at "/opt/omniscient".
-2. Initialize the "bashly" framework using pip.
-3. Set up the "bashly" config file by adding scripts to your chosen directories ("example1.sh" and "example2.sh").
-4. Create example OSINT scripts in your chosen directories.
-5. Make all scripts executable (chmod +x).
-6. Make sure both directories are owned by root and have appropriate permissions.
-7. Add more OSINT scripts to the bashly framework if desired.
+# Create omniscient directory
+sudo mkdir /opt/omniscient  
+sudo mkdir /usr/local/bin/omniscient
 
-note: this is just a generic example, and it may need to be adjusted depending on your specific needs and requirements. However, this should give you a good starting point for implementing this in your own bash script.
+# Install bashly framework 
+sudo pip install bashly
+
+# Set up bashly config
+bashly init
+bashly add /opt/omniscient
+bashly add /usr/local/bin/omniscient
+
+# Create example OSINT scripts
+touch /opt/omniscient/example1.sh
+touch /usr/local/bin/omniscient/example2.sh
+
+# Make scripts executable 
+chmod +x /opt/omniscient/example1.sh
+chmod +x /usr/local/bin/omniscient/example2.sh
+
+# Done! Can now add more OSINT scripts to the bashly framework

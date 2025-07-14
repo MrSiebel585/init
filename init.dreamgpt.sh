@@ -1,19 +1,31 @@
-To improve readability and clean up the script, here are some suggestions:
+#!/bin/bash
 
-1. Remove redundant lines - use a blank line between each section to separate logical chunks of code.
+# Check for Python 3.10+
+if ! python3 --version | grep -q "Python 3.10"; then
+    echo "Python 3.10 or higher is required."
+    exit 1
+fi
 
-2. Use meaningful variable names - keep variable names concise and descriptive for clarity and easy understanding.
+# Check for Poetry
+if ! command -v poetry &> /dev/null; then
+    echo "Poetry is not installed. Installing Poetry..."
+    curl -sSL https://install.python-poetry.org | python3 -
+fi
 
-3. Eliminate whitespace and comments - use whitespace to separate blocks of code, and remove any unnecessary comments that do not add value or clarification to the code.
+# Clone the dreamGPT repository
+echo "Cloning dreamGPT repository..."
+git clone https://github.com/DivergentAI/dreamGPT.git
+cd dreamGPT
 
-4. Follow PEP 8 style guide - use Python's built-in `pep8` tool to check and suggest fixes for style errors.
+# Rename .env.example to .env
+cp .env.example .env
+echo "Renamed .env.example to .env. Please fill in the required API keys."
 
-5. Use meaningful variable names - keep variables descriptive for clarity, and avoid using commonly used names like `i`, `j`, or `_`.
+# Install dependencies
+echo "Installing dependencies..."
+poetry install
 
-6. Prefer single quotation marks over double - use only single quotation marks when writing string literals, to make the code more consistent and easy to read.
-
-7. Use proper indentation - use spaces instead of tabs for indentation, as it aligns with PEP 8 style guide and makes the code easier to read and maintain.
-
-8. Use formatting tools - consider using a tool like `black` or `flake8` to enforce consistent formatting standards across your codebase.
-
-By following these suggestions, you'll be able to improve the clarity and readability of your code while also ensuring it follows best practices for style and formatting.
+# Instruction for running the script
+echo "Installation complete."
+echo "To start dreamGPT, run 'poetry run start' inside the dreamGPT directory."
+echo "Optionally, to provide a guiding theme, run 'poetry run start --theme \"your theme\"'."

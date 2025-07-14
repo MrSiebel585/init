@@ -1,17 +1,70 @@
-To further improve the readability of the Bash script, here are some suggestions for standardizing and improving the code:
+#!/bin/bash
+set -e
 
-1. Use a modular structure: Break up the script into smaller modules that can be reused in other parts of the system. This will make it easier to maintain and update in the future.
+LOGFILE="/var/log/init.aliases.installer.log"
+exec > >(tee -a "$LOGFILE") 2>&1
 
-2. Follow PEP8 style guide: Use Python's PEP8 style guide for coding conventions, including spaces and indentation. This will help ensure consistency and readability throughout the codebase.
+# Function to check command success
+check_success() {
+  if [ $? -ne 0 ]; then
+    echo "Error during $1. Check the log file $LOGFILE for details."
+    exit 1
+  fi
+}
 
-3. Document your code: Include documentation with each function or method in the script to explain what it does and how it works. This will make it easier for other developers to understand and modify the script over time.
+# Define installation paths
+INSTALL_DIR="/opt/omniscient"
+BIN_DIR="$INSTALL_DIR/bin"
+GUI_DIR="$INSTALL_DIR/gui"
+INIT_DIR="$INSTALL_DIR/init"
+README_FILE="$INSTALL_DIR/README.md"
+ALIAS_FILE="$INIT_DIR/init.aliases"
 
-4. Use meaningful variable names: Make sure variable names are descriptive and easy to read. Consider using prefixes or suffixes to help differentiate different types of variables, such as `g_` for global variables or `b_` for local variables.
+# Check if script is being run as root
+if [ "$(id -u)" -ne 0 ]; then
+  echo "You must run this script as root or with sudo."
+  exit 1
+fi
 
-5. Avoid long lines: Limit the length of lines in your code to avoid creating unnecessary comments or making it harder to read. This will also help prevent long and unwieldy method implementations.
+# Create necessary directories
+echo "Creating necessary directories..."
+mkdir -p "$BIN_DIR"
+mkdir -p "$GUI_DIR"
+mkdir -p "$INIT_DIR"
 
-6. Use meaningful file names: Use descriptive and appropriate filenames for each module, function, or method. Avoid using generic names such as `main` or `init` that could be interpreted differently depending on the context.
+# Copy files to their locations
+echo "Copying files..."
+cp omniscientctl "$BIN_DIR/"
+cp tkinter_gui.py "$GUI_DIR/"
+cp omniscient_menu.sh "$INSTALL_DIR/"
+cp init.aliases "$INIT_DIR/"
+cp README.md "$README_FILE"
 
-7. Test your code: Ensure that all functions and methods have been tested with appropriate unit tests to ensure they work as expected. This will help prevent bugs from being introduced later in the development process.
+# Set permissions for copied files
+echo "Setting file permissions..."
+chmod +x "$BIN_DIR/omniscientctl"
+chmod +x "$GUI_DIR/tkinter_gui.py"
+chmod +x "$INSTALL_DIR/omniscient_menu.sh"
 
-By following these tips, you can improve the readability of the Omniscient installation script and make it easier to maintain and update in the future.
+# Set up aliases
+echo "Setting up shell aliases..."
+BASHRC="$HOME/.bashrc"
+
+# Check if aliases are already sourced
+if ! grep -q "$ALIAS_FILE" "$BASHRC"; then
+  echo "" >> "$BASHRC"
+  echo "# Load Omniscient aliases" >> "$BASHRC"
+  echo "source $ALIAS_FILE" >> "$BASHRC"
+else
+  echo "Aliases are already set in .bashrc"
+fi
+
+# Reload .bashrc to activate aliases
+echo "Reloading .bashrc..."
+source "$BASHRC"
+
+# Display success message
+echo "Omniscient installation is complete!"
+echo "Please run 'source ~/.bashrc' or restart your terminal to load the aliases."
+echo "You can now use Omniscient commands such as 'omniscient', 'omnigui', etc."
+

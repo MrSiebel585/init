@@ -1,17 +1,21 @@
-To clean up, standardize, and improve readability of the Bash script mentioned in the given BEGIN SCRIPT, follow these steps:
+#!/bin/bash
 
-1. Use tabs instead of spaces for indentation. Use a tab stop of four spaces, or double width for better readability.
+spooler_output="/path/to/spooler/output.log"
 
-2. Organize the code into functions as much as possible to make it more maintainable and understandable.
+echo 'Debian Forensics Environment - essential components (metapackage)' | tee -a "$spooler_output"
+sudo apt install -y forensics-all >> "$spooler_output" 2>&1
 
-3. Use meaningful variable names that reflect their purpose. For example, `spooler_output` could be named `log`, while `sudo apt install -y etc. >> log` could be named `install`.
+echo 'Debian Forensics Environment - GUI components (metapackage)' | tee -a "$spooler_output"
+sudo apt install -y forensics-all-gui >> "$spooler_output" 2>&1
 
-4. Group related commands into logical sections, such as installing packages and running processes.
+echo 'Show differences between files using color graphics' | tee -a "$spooler_output"
+sudo apt install -y forensics-colorize >> "$spooler_output" 2>&1
 
-5. Use comments to explain what each section is doing and why it's important.
+echo 'Forensics Environment - extra console components (metapackage)' | tee -a "$spooler_output"
+sudo apt install -y forensics-extra >> "$spooler_output" 2>&1
 
-6. Remove unnecessary output or error messages by filtering out those that don't apply to the current situation.
+echo 'Forensics Environment - extra GUI components (metapackage)' | tee -a "$spooler_output"
+sudo apt install -y forensics-extra-gui >> "$spooler_output" 2>&1
 
-7. Use a single line to write error messages instead of multiple lines, where possible. This will help make the script easier to read and understand for potential future maintenance.
-
-By following these steps, your Bash script can be more readable and easier to maintain.
+echo 'Full forensics station (metapackage)' | tee -a "$spooler_output"
+sudo apt install -y forensics-full >> "$spooler_output" 2>&1

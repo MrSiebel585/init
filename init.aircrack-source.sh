@@ -1,25 +1,31 @@
-Here's a modified version of the Bash script with improved readability and code organization:
-
-```bash
 #!/bin/bash
+# init.aircrack-source.sh
+# Script to install Aircrack-ng from source
 
+set -e  # Exit immediately if a command exits with a non-zero status
+
+echo "Updating package lists..."
 sudo apt-get update
-sudo apt-get install build-essential git libpcap-dev
-git clone https://github.com/aircrack-ng/aircraftrack-ng.git
-cd aircraftrack-ng
+
+echo "Installing required packages..."
+sudo apt-get install -y build-essential git libpcap-dev
+
+AIRCRACK_DIR="aircrack-ng"
+
+if [ -d "$AIRCRACK_DIR" ]; then
+    echo "Directory $AIRCRACK_DIR already exists. Pulling latest changes..."
+    cd "$AIRCRACK_DIR"
+    git pull
+else
+    echo "Cloning Aircrack-ng repository..."
+    git clone https://github.com/aircrack-ng/aircrack-ng.git
+    cd "$AIRCRACK_DIR"
+fi
+
+echo "Configuring build..."
 ./configure
+
+echo "Building and installing Aircrack-ng..."
 make && sudo make install
-```
 
-Now, the `configurator` is a self-explanatory command that runs the `configure` script. The `cleaner` ensures that all necessary dependencies are installed first before running any actual scripts. Finally, both scripts and their respective output can be easily executed by simply typing:
-
-```bash
-./script_name <script argument(s)>
-```
-
-Example usage:
-
-```bash
-./aircraftrack-ng configure
-./aircraftrack-ng clean install
-```
+echo "Aircrack-ng installation completed successfully."
