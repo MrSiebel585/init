@@ -30,7 +30,7 @@ Now, you're ready to install AutoGen in the virtual environment you've just crea
 AutoGen requires Python version >= 3.8. It can be installed from pip:
 
 ```bash
-pip install pyautogen
+pip install ag2
 ```
 
 ## Optional Dependencies
@@ -50,7 +50,7 @@ pip install docker
 AutoGen offers a cost-effective hyperparameter optimization technique EcoOptiGen for tuning Large Language Models. Please install with the [blendsearch] option to use it.
 
 ```bash
-pip install "pyautogen[blendsearch]"
+pip install "ag2[blendsearch]"
 ```
 
 ### retrievechat
@@ -58,7 +58,7 @@ pip install "pyautogen[blendsearch]"
 AutoGen supports retrieval-augmented generation tasks such as question answering and code generation with RAG agents. Please install with the [retrievechat] option to use it.
 
 ```bash
-pip install "pyautogen[retrievechat]"
+pip install "ag2[retrievechat]"
 ```
 
 ### mathchat
@@ -66,7 +66,7 @@ pip install "pyautogen[retrievechat]"
 AutoGen offers an experimental agent for math problem solving. Please install with the [mathchat] option to use it.
 
 ```bash
-pip install "pyautogen[mathchat]"
+pip install "ag2[mathchat]"
 ```
 EOF
 )
